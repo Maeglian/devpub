@@ -172,8 +172,13 @@ export default {
 <style lang="scss">
 .CalendarMonth {
   &-Table {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &-Title {
